@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Create Rectangle</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  </head>
+  <body>
+    <h1>Create New Rectangle</h1>
+    <form th:action="@{/rectangle}" th:object="${rectangle}" method="post">
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" th:field="*{name}" required />
+      </div>
+      <div>
+        <label for="color">Color:</label>
+        <input
+          type="color"
+          id="color"
+          name="color"
+          th:field="*{color}"
+          required
+        />
+      </div>
+      <div>
+        <label for="width">Width:</label>
+        <input
+          type="number"
+          id="width"
+          name="width"
+          min="1"
+          th:field="*{width}"
+          required
+        />
+      </div>
+      <div>
+        <label for="height">Height:</label>
+        <input
+          type="number"
+          id="height"
+          min="1"
+          name="height"
+          th:field="*{height}"
+          required
+        />
+      </div>
+      <button type="submit">Create</button>
+    </form>
+    <a th:href="@{/}">Back</a>
+  </body>
+</html>
