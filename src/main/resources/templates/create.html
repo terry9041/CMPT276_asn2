@@ -6,7 +6,12 @@
   </head>
   <body>
     <h1>Create New Rectangle</h1>
-    <form th:action="@{/rectangle}" th:object="${rectangle}" method="post">
+    <form
+      th:action="@{/rectangle}"
+      th:object="${rectangle}"
+      method="post"
+      class="create-form"
+    >
       <div>
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" th:field="*{name}" required />
