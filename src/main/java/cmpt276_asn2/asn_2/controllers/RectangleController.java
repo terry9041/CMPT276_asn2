@@ -66,4 +66,11 @@ public class RectangleController {
         rectangleService.deleteRectangle(id);
         return "redirect:/";
     }
+
+    @PostMapping("/rectangle/update/{id}")
+    public String updateRectangleFromDetail(@PathVariable Long id, @ModelAttribute Rectangle rectangle) {
+        rectangle.setId(id);
+        rectangleService.saveRectangle(rectangle);
+        return "redirect:/";
+    }
 }
