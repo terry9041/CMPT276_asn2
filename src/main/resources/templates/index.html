@@ -27,10 +27,14 @@
               >Name</a
             >
           </td>
-          <td th:text="${rectangle.fillColor.replace('#', '').toUpperCase()}">
+          <td
+            th:text="${rectangle.fillColor != null ? rectangle.fillColor.replace('#', '').toUpperCase() : 'N/A'}"
+          >
             Fill Color
           </td>
-          <td th:text="${rectangle.borderColor.replace('#', '').toUpperCase()}">
+          <td
+            th:text="${rectangle.borderColor != null ? rectangle.borderColor.replace('#', '').toUpperCase() : 'N/A'}"
+          >
             Border Color
           </td>
           <td>
