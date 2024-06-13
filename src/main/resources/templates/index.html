@@ -9,15 +9,16 @@
     <table>
       <thead>
         <tr>
-          <th>ID</th>
+          <th></th>
           <th>Name</th>
           <th>Color</th>
           <th>Actions</th>
         </tr>
       </thead>
       <tbody>
-        <tr th:each="rectangle : ${rectangles}">
-          <td th:text="${rectangle.id}">1</td>
+        <tr th:each="rectangle, iterStat : ${rectangles}">
+          <td th:text="${iterStat.count}">1</td>
+          <!-- Use iterStat.count for 1-based index -->
           <td>
             <a
               th:href="@{/rectangle/{id}(id=${rectangle.id})}"
