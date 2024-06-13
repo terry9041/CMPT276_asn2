@@ -26,7 +26,9 @@
               >Name</a
             >
           </td>
-          <td th:text="${rectangle.color}">Color</td>
+          <td th:text="${rectangle.color.replace('#', '').toUpperCase()}">
+            Color
+          </td>
           <td>
             <a
               th:href="@{/rectangle/delete/{id}(id=${rectangle.id})}"

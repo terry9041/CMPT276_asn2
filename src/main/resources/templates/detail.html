@@ -13,8 +13,6 @@
         th:style="'width:' + ${rectangle.width} + 'px; height:' + ${rectangle.height} + 'px; background-color:' + ${rectangle.color}"
       ></div>
     </div>
-      
-
         <table class="rectangle-details">
           <tr>
             <td>Name</td>
@@ -30,7 +28,7 @@
           </tr>
           <tr>
             <td>Color</td>
-            <td th:text="${rectangle.color}">Color</td>
+            <td th:text="${rectangle.color.replace('#', '').toUpperCase()}"></td>
           </tr>
         </table>
 
