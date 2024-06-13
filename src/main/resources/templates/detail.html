@@ -11,37 +11,63 @@
       <div class="rectangle-name-display" th:text="${rectangle.name}"></div>
       <div
         class="rectangle"
-        th:style="'width:' + ${rectangle.width} + 'px; height:' + ${rectangle.height} + 'px; background-color:' + ${rectangle.fillColor} + '; border-color:' + ${rectangle.borderColor}"
+        th:style="'width:' + ${rectangle.width} + 'px; height:' + ${rectangle.height} + 'px; background-color:' + ${rectangle.fillColor} + '; border-color:' + ${rectangle.borderColor} + '; border-width: 2px; border-style: solid;'"
       ></div>
     </div>
-    <form th:action="@{/rectangle/update/{id}(id=${rectangle.id})}" th:method="post" class="detail-form"></form>
+    <form
+      th:action="@{/rectangle/update/{id}(id=${rectangle.id})}"
+      th:method="post"
+      class="detail-form"
+    >
       <table class="rectangle-details">
         <tr>
           <td>Name</td>
-          <td><input type="text" name="name" th:value="${rectangle.name}" /></td>
+          <td>
+            <input type="text" name="name" th:value="${rectangle.name}" />
+          </td>
         </tr>
         <tr>
           <td>Width</td>
-          <td><input type="number" name="width" th:value="${rectangle.width}" /></td>
+          <td>
+            <input type="number" name="width" th:value="${rectangle.width}" />
+          </td>
         </tr>
         <tr>
           <td>Height</td>
-          <td><input type="number" name="height" th:value="${rectangle.height}" /></td>
+          <td>
+            <input type="number" name="height" th:value="${rectangle.height}" />
+          </td>
         </tr>
         <tr>
           <td>Fill Color</td>
-          <td><input type="color" name="fillColor" th:value="${rectangle.fillColor}" /></td>
+          <td>
+            <input
+              type="color"
+              name="fillColor"
+              th:value="${rectangle.fillColor}"
+            />
+          </td>
         </tr>
         <tr>
           <td>Border Color</td>
-          <td><input type="color" name="borderColor" th:value="${rectangle.borderColor}" /></td>
+          <td>
+            <input
+              type="color"
+              name="borderColor"
+              th:value="${rectangle.borderColor}"
+            />
+          </td>
         </tr>
       </table>
       <button type="submit">Save Changes</button>
     </form>
 
     <section class="action-buttons">
-      <a th:href="@{/rectangle/delete/{id}(id=${rectangle.id})}" th:text="Delete">Delete</a>
+      <a
+        th:href="@{/rectangle/delete/{id}(id=${rectangle.id})}"
+        th:text="Delete"
+        >Delete</a
+      >
       <a th:href="@{/}" th:text="Back">Back</a>
     </section>
   </body>
