@@ -13,7 +13,7 @@
           <th>Name</th>
           <th>Fill Color</th>
           <th>Border Color</th>
-          <th>Actions</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -21,11 +21,17 @@
           <td th:text="${iterStat.count}">1</td>
           <!-- Use iterStat.count for 1-based index -->
           <td>
-            <a
-              th:href="@{/rectangle/{id}(id=${rectangle.id})}"
-              th:text="${rectangle.name}"
-              >Name</a
-            >
+            <div class="rectangle-descriptor">
+              <a
+                th:href="@{/rectangle/{id}(id=${rectangle.id})}"
+                th:text="${rectangle.name}"
+                >Name</a
+              >
+              <div
+                th:if="${rectangle.borderColor != null && rectangle.fillColor != null}"
+                th:style="'display: inline-block; width: 20px; height: 20px; margin-left: 10px; border: 1px solid #' + ${#strings.replace(rectangle.borderColor, '#', '')} + '; background-color: #' + ${#strings.replace(rectangle.fillColor, '#', '')}"
+              ></div>
+            </div>
           </td>
           <td
             th:text="${rectangle.fillColor != null ? rectangle.fillColor.replace('#', '').toUpperCase() : 'N/A'}"
