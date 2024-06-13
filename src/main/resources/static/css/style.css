@@ -18,7 +18,7 @@ h1 {
 }
 
 table {
-  width: 100%;
+  max-width: 800px;
   border-collapse: collapse;
   margin-bottom: 20px;
   color: black;
