@@ -24,6 +24,18 @@ table {
   margin-bottom: 20px;
   color: black;
 }
+
+table th:first-child,
+table td:first-child {
+  width: auto;
+  min-width: 30px;
+}
+
+table th:nth-child(n + 2),
+table td:nth-child(n + 2) {
+  width: 25%;
+}
+
 .all-rectangles-table {
   width: 60%;
 }
