@@ -8,11 +8,20 @@ public class Rectangle {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String color;
+    private String fillColor; // Updated attribute name
     private int width;
     private int height;
+    private String borderColor;
 
     // Getters and setters
+    public String getBorderColor() {
+        return borderColor;
+    }
+
+    public void setBorderColor(String borderColor) {
+        this.borderColor = borderColor;
+    }
+
     public Long getId() {
         return id;
     }
@@ -29,12 +38,12 @@ public class Rectangle {
         this.name = name;
     }
 
-    public String getColor() {
-        return color;
+    public String getFillColor() {
+        return fillColor;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public void setFillColor(String fillColor) {
+        this.fillColor = fillColor;
     }
 
     public int getWidth() {

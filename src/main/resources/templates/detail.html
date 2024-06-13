@@ -8,13 +8,13 @@
   <body>
     <h1>Rectangle Details</h1>
     <div class="rectangle-display">
-         <div class="rectangle-name-display" th:text="${rectangle.name}"></div>
-         <div
+      <div class="rectangle-name-display" th:text="${rectangle.name}"></div>
+      <div
         class="rectangle"
-        th:style="'width:' + ${rectangle.width} + 'px; height:' + ${rectangle.height} + 'px; background-color:' + ${rectangle.color}"
+        th:style="'width:' + ${rectangle.width} + 'px; height:' + ${rectangle.height} + 'px; background-color:' + ${rectangle.fillColor} + '; border-color:' + ${rectangle.borderColor}"
       ></div>
     </div>
-    <form th:action="@{/rectangle/update/{id}(id=${rectangle.id})}" th:method="post" class = "detail-form">
+    <form th:action="@{/rectangle/update/{id}(id=${rectangle.id})}" th:method="post" class="detail-form"></form>
       <table class="rectangle-details">
         <tr>
           <td>Name</td>
@@ -29,19 +29,20 @@
           <td><input type="number" name="height" th:value="${rectangle.height}" /></td>
         </tr>
         <tr>
-          <td>Color</td>
-          <td><input type="color" name="color" th:value="${rectangle.color}" /></td>
+          <td>Fill Color</td>
+          <td><input type="color" name="fillColor" th:value="${rectangle.fillColor}" /></td>
+        </tr>
+        <tr>
+          <td>Border Color</td>
+          <td><input type="color" name="borderColor" th:value="${rectangle.borderColor}" /></td>
         </tr>
       </table>
-  <button type="submit">Save Changes</button>
-  </form>
+      <button type="submit">Save Changes</button>
+    </form>
 
-    </div>
-    <section class = "action-buttons">
-    <a th:href="@{/rectangle/delete/{id}(id=${rectangle.id})}" th:text="Delete"
-      >Delete</a
-    >
-    <a th:href="@{/}" th:text="Back">Back</a>
+    <section class="action-buttons">
+      <a th:href="@{/rectangle/delete/{id}(id=${rectangle.id})}" th:text="Delete">Delete</a>
+      <a th:href="@{/}" th:text="Back">Back</a>
     </section>
   </body>
 </html>

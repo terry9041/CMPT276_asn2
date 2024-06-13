@@ -18,14 +18,24 @@
         <input type="text" id="name" name="name" th:field="*{name}" required />
       </div>
       <div>
-        <label for="color">Color:</label>
+        <label for="fillColor">Fill Color:</label>
         <input
           type="color"
-          id="color"
-          name="color"
-          th:field="*{color}"
+          id="fillColor"
+          name="fillColor"
+          th:field="*{fillColor}"
           required
         />
+        <div>
+          <label for="borderColor">Border Color:</label>
+          <input
+            type="color"
+            id="borderColor"
+            name="borderColor"
+            th:field="*{borderColor}"
+            required
+          />
+        </div>
       </div>
       <div>
         <label for="width">Width:</label>

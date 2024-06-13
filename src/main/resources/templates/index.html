@@ -11,7 +11,8 @@
         <tr>
           <th></th>
           <th>Name</th>
-          <th>Color</th>
+          <th>Fill Color</th>
+          <th>Border Color</th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -26,8 +27,11 @@
               >Name</a
             >
           </td>
-          <td th:text="${rectangle.color.replace('#', '').toUpperCase()}">
-            Color
+          <td th:text="${rectangle.fillColor.replace('#', '').toUpperCase()}">
+            Fill Color
+          </td>
+          <td th:text="${rectangle.borderColor.replace('#', '').toUpperCase()}">
+            Border Color
           </td>
           <td>
             <a
