@@ -3,11 +3,12 @@
   <head>
     <title>Rectangle Details</title>
     <link rel="stylesheet" href="/css/style.css" />
+    <script src="/js/updateRectangle.js"></script>
   </head>
   <body>
     <h1>Rectangle Details</h1>
     <div class="rectangle-display">
-         <div th:text="${rectangle.name}"></div>
+         <div class="rectangle-name-display" th:text="${rectangle.name}"></div>
          <div
         class="rectangle"
         th:style="'width:' + ${rectangle.width} + 'px; height:' + ${rectangle.height} + 'px; background-color:' + ${rectangle.color}"
