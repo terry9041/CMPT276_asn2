@@ -13,12 +13,15 @@
         class="rectangle"
         th:style="'width:' + ${rectangle.width} + 'px; height:' + ${rectangle.height} + 'px; background-color:' + ${rectangle.fillColor} + '; border-color:' + ${rectangle.borderColor} + '; border-width: 2px; border-style: solid;'"
       ></div>
+      <!-- use th:style to change the style of the rectangle based on the model attribute -->
     </div>
     <form
       th:action="@{/rectangle/update/{id}(id=${rectangle.id})}"
       th:method="post"
       class="detail-form"
     >
+      <!-- create a form that will be submitted to a dynamic link using POST method-->
+      <!-- use POST method as we are posting data to DB -->
       <table class="rectangle-details">
         <tr>
           <td>Name</td>
@@ -59,7 +62,9 @@
           </td>
         </tr>
       </table>
+      <!-- using th:value to change the attribute of obj throughout the form -->
       <button type="submit">Save Changes</button>
+      <!-- trigger for form submittion and then making POST request  -->
     </form>
 
     <section class="action-buttons">
@@ -68,7 +73,9 @@
         th:text="Delete"
         >Delete</a
       >
+      <!-- create a link to delete the rectangle -->
       <a th:href="@{/}" th:text="Back">Back</a>
+      <!-- create a link to go back to the home page -->
     </section>
   </body>
 </html>

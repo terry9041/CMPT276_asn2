@@ -6,8 +6,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-import cmpt276_asn2.asn_2.repository.RectangleRepository; // Add this import statement
-import cmpt276_asn2.asn_2.entity.Rectangle; // Add this import statement
+import cmpt276_asn2.asn_2.repository.RectangleRepository;
+import cmpt276_asn2.asn_2.entity.Rectangle;
 
 @Service
 public class RectangleService {

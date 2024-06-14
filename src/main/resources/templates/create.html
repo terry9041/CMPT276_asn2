@@ -13,6 +13,7 @@
       method="post"
       class="create-form"
     >
+      <!-- making a form where the submission will be a POST request to the url sth/rectangles -->
       <div>
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" th:field="*{name}" required />
@@ -59,8 +60,10 @@
           required
         />
       </div>
+      <!-- using th:field to make the form entry into the model attributes -->
       <button type="submit">Create</button>
     </form>
     <a th:href="@{/}">Back</a>
+    <!-- creating a link to go back to the home page -->
   </body>
 </html>

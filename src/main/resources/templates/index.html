@@ -18,6 +18,7 @@
       </thead>
       <tbody>
         <tr th:each="rectangle, iterStat : ${rectangles}">
+          <!-- use th:each to loop through each rectangle obj, using iterStat for optional status variable -->
           <td th:text="${iterStat.count}">1</td>
           <!-- Use iterStat.count for 1-based index -->
           <td>
@@ -25,22 +26,27 @@
               <a
                 th:href="@{/rectangle/{id}(id=${rectangle.id})}"
                 th:text="${rectangle.name}"
-                >Name</a
+              >
+                <!-- use th:href to set the hyperlink when clicked, it adds /rectangle/{rectangle.id} to the end of the current url -->
+                Name</a
               >
               <div
                 th:if="${rectangle.borderColor != null && rectangle.fillColor != null}"
                 th:style="'display: inline-block; width: 20px; height: 20px; margin-left: 10px; border: 1px solid #' + ${#strings.replace(rectangle.borderColor, '#', '')} + '; background-color: #' + ${#strings.replace(rectangle.fillColor, '#', '')}"
               ></div>
+              <!-- the div above is for the preview next to the rectangle's name -->
             </div>
           </td>
           <td
             th:text="${rectangle.fillColor != null ? rectangle.fillColor.replace('#', '').toUpperCase() : 'N/A'}"
           >
+            <!-- replace the # with empty string to remove #, also use toUpperCase() for uppercasing the alphabets -->
             Fill Color
           </td>
           <td
             th:text="${rectangle.borderColor != null ? rectangle.borderColor.replace('#', '').toUpperCase() : 'N/A'}"
           >
+            <!-- replace the # with empty string to remove #, also use toUpperCase() for uppercasing the alphabets -->
             Border Color
           </td>
           <td>
@@ -49,10 +55,12 @@
               class="delete-link"
               >DELETE</a
             >
+            <!-- use th:href to set the hyperlink when clicked, it adds /rectangle/delete/{rectangle.id} to the end of the current url -->
           </td>
         </tr>
       </tbody>
     </table>
     <a th:href="@{/rectangle/new}">Add New Rectangle</a>
+    <!-- use th:href to set the hyperlink when clicked, it adds /rectangle/new to the end of the current url -->
   </body>
 </html>

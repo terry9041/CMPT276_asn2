@@ -8,7 +8,7 @@ public class Rectangle {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String fillColor; // Updated attribute name
+    private String fillColor;
     private int width;
     private int height;
     private String borderColor;
